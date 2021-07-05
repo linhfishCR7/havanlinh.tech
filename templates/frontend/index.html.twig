@@ -1,0 +1,37 @@
+{# Kế thừa layout backend #}
+{% extends "frontend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Home
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block content #}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            {% for main in main %}
+            <div class="col-sm-12 col-md-4 mt-6">
+                <div class="simple-card">
+                    <div class="simple-card-image">            
+                        {% if main.Picture %}
+                        <img src="/assets/uploads/{{ main.Picture }}" alt="" />
+                        {% else %}
+                        <img src="http://placekitten.com/300/250" alt="" />
+                        {% endif %}
+                    </div>
+                    <div class="simple-card-content">
+                        <h3 class="simple-card-title"><a href="{{main.LinkTitle}}" target="_blank" rel="noopener noreferrer">{{main.Title}}</a></h3>
+                        <p class="simple-card-desc">Nguồn <a href="{{main.LinkSource}}" target="_blank" rel="noopener noreferrer">{{main.NameSource}}</a></p>
+                        <div class="simple-card-line"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
+{# End Nội dung trong block content #}
+

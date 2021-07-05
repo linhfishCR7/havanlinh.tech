@@ -1,0 +1,86 @@
+{# Kế thừa layout backend #}
+{% extends "backend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Add New List Main
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Add New List Main
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<form name="frmListMain" id="frmListMain" method="post" action="/backend/main/create.php" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="ID">ID</label>
+        <input type="text" class="form-control" id="ID" name="ID" placeholder="ID" readonly>
+        <small id="idHelp" class="form-text text-muted">ID Of Main Is Just Read Not Edit.</small>
+    </div>
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" placeholder="Title Of Main">
+    </div>
+    <div class="form-group">
+        <label for="LinkTitle">Link Title</label>
+        <input type="text" class="form-control" id="LinkTitle" name="LinkTitle" placeholder="Link Title Of Main">
+    </div>
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <!-- <input type="text" class="form-control" id="Content" name="Content" placeholder="Content Of Main"> -->
+        <textarea class="input-xlarge textarea" name="Content" id="Content"></textarea>
+
+    </div>
+    <div class="form-group">
+        <label for="LinkSource">Link Source</label>
+        <!-- <textarea class="input-xlarge textarea" name="LinkSource" id="LinkSource"></textarea> -->
+        <input type="url" class="form-control" id="LinkSource" name="LinkSource" placeholder="Link Source Of Main">
+    </div>
+    <div class="form-group">
+        <label for="NameSource">Name Source</label>
+        <input type="text" class="form-control" id="NameSource" name="NameSource" placeholder="Name Source Of Main">
+    </div>
+    <div class="form-group">
+        <label for="Picture">Picture</label>
+        <input type="file" class="form-control" id="Picture" name="Picture">
+    </div>
+    <div class="form-group">
+        <label for="Create_at">Create At</label>
+        <input type="date" class="form-control" id="Create_at" name="Create_at" placeholder="Create_at Of Main">
+    </div>
+    <button class="btn btn-primary mt-2" name="btnSave">Add</button>
+</form>
+{% endblock %}
+{# End Nội dung trong block content #}
+
+{% block customscripts %}
+<script>
+    $(document).ready(function () {
+        $("#Picture").fileinput({
+            theme: 'fas'
+            , showUpload: false
+            , showCaption: true
+            , fileType: "any"
+            , initialPreviewAsData: true
+            , previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+            , overwriteInitial: false
+        });
+
+        // // Ô nhập liệu cho phép chọn nhiều hình ảnh cùng lúc (các hình ảnh liên quan đến sản phẩm)
+        // $("#sp_hinhanhlienquan").fileinput({
+        //     theme: 'fas'
+        //     , showUpload: true
+        //     , showCaption: true
+        //     , fileType: "any"
+        //     , previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+        //     , overwriteInitial: false
+        //     , allowedFileExtensions: ["jpg", "gif", "png"]
+        // });
+    });
+
+</script>
+{% endblock %}
