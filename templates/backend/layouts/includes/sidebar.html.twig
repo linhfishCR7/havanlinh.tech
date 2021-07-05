@@ -1,0 +1,24 @@
+{% if session['email_logged']==true %}
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <span data-feather="home"></span>
+                    Bảng tin 
+                    <!-- <span class="sr-only">(current)</span> -->
+                </a>
+            </li>
+            <!-- Menu Hình Sản phẩm -->
+            <li class="nav-item">
+                <a href="#hinhsanphamSubMenu" data-toggle="collapse" aria-expanded="false" class="nav-link ">
+                    <span data-feather="package"></span> 
+                    Main
+                </a>
+                
+            </li>
+            <!-- End Menu Hình Sản phẩm -->
+        </ul>
+    </div>
+</nav>
+{% endif %}

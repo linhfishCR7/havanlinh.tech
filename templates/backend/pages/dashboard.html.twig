@@ -1,0 +1,47 @@
+{# Kế thừa layout backend #}
+{% extends "backend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Bảng tin
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Bảng tin
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="card text-white bg-success">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">ONLINE</h4>
+                    <p class="card-text">
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Online: {{online}}</li>
+                              <li class="list-group-item">Day: {{day}}</li>
+                              <li class="list-group-item">Yesterday: {{yesterday}}</li>
+                              <li class="list-group-item">Week: {{week}}</li>
+                              <li class="list-group-item">Last Week: {{lastweek}}</li>
+                              <li class="list-group-item">Month: {{month}}</li>
+                              <li class="list-group-item">Year: {{year}}</li>
+                              <li class="list-group-item">Total: {{visit}}</li>
+
+                            </ul>
+                          </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
+{# End Nội dung trong block content #}

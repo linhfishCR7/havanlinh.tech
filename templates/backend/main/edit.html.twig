@@ -1,0 +1,88 @@
+{# Kế thừa layout backend #}
+{% extends "backend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Update List Main
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Update List Main
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<form name="frmListMain" id="frmListMain" method="post" action="/backend/main/edit.php?ID={{ main.ID }}" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="lsp_ma">ID</label>
+        <input type="text" class="form-control" id="ID" name="ID" readonly value="{{ main.ID }}">
+        <small id="idHelp" class="form-text text-muted">ID Of Main Is Just Read Not Edit.</small>
+    </div>
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="{{ main.Title }}">
+    </div>
+    <div class="form-group">
+        <label for="LinkTitle">Link Title</label>
+        <input type="text" class="form-control" id="LinkTitle" name="LinkTitle" value="{{ main.LinkTitle }}">
+    </div>
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <!-- <input type="text" class="form-control" id="Content" name="Content" placeholder="Content Of Main"> -->
+        <textarea class="input-xlarge textarea" name="Content" id="Content">{{ main.Content }}</textarea>
+
+    </div>
+    <div class="form-group">
+        <label for="LinkSource">Link Source</label>
+        <!-- <textarea class="input-xlarge textarea" name="LinkSource" id="LinkSource">{{ main.LinkSource }}</textarea> -->
+        <input type="url" class="form-control" id="LinkSource" name="LinkSource" value="{{ main.LinkSource }}">
+    </div>
+    <div class="form-group">
+        <label for="NameSource">Name Source</label>
+        <input type="text" class="form-control" id="NameSource" name="NameSource" value="{{ main.NameSource }}">
+    </div>
+    <div class="form-group">
+        <label for="Picture">Picture</label>
+        <input type="file" class="form-control" id="Picture" name="Picture" value="{{ main.Picture }}">
+    </div>
+    <div class="form-group">
+        <label for="Create_at">Create At</label>
+        <input type="date" class="form-control" id="Create_at" name="Create_at" value="{{ main.Create_at }}">
+    </div>
+    <button class="btn btn-primary mt-2" name="btnSave">Cập nhật</button>
+</form>
+{% endblock %}
+{# End Nội dung trong block content #}
+{% block customscripts %}
+<script>
+    $(document).ready(function() {
+        $("#Picture").fileinput({
+            theme: 'fas'
+            , showUpload: true
+            , showCaption: true
+            , fileType: "any"
+            , append: false
+            , showRemove: false
+            , autoReplace: true
+            , previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+            , overwriteInitial: false
+            , initialPreviewShowDelete: false
+            , initialPreviewAsData: true
+            , initialPreview: [
+                "../../../assets/uploads/{{ main.Picture }}"
+            ]
+            , initialPreviewConfig: [{
+                caption: "{{ main.Picture }}"
+                , width: "120px"
+                , url: "{$url}"
+                , key: 1
+            }, ]
+        });
+        
+    });
+
+</script>
+{% endblock %}
