@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../bootstrap.php';
 include_once(__DIR__ . '/../../dbconnect.php');
 
 // Đã đăng nhập rồi -> điều hướng về trang chủ
-if(isset($_SESSION['email_logged']) && !empty($_SESSION['email_logged'])) {
+if(isset($_SESSION['email_logged']) && !empty($_SESSION['email_logged']) ) {
     header('location:../pages/dashboard.php');
 }
 else {

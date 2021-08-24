@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" type="image/x-icon" href="../../../assets/backend/img/icon.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
     <!-- Custom css - Các file css do chúng ta tự viết -->
@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="../../../assets/vendor/bootstrap-fileinput/css/fileinput.css" media="all"
         type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-    <link href="../../../assets/vendor/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link href="../../../assets/vendor/fontawesome/css/all.css" rel="stylesheet">
+    <!--load all styles -->
 
     <link rel="stylesheet" href="../../../assets/vendor/bootstrap-fileinput/themes/explorer-fas/theme.css" media="all"
         type="text/css" />
@@ -58,11 +59,15 @@
         .dropdown-toggle {
             outline: 0;
         }
+
+        
     </style>
     <!-- End block title -->
+
 </head>
 
 <body class="d-flex flex-column h-100">
+
     <header class="p-3 bg-dark text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -96,7 +101,8 @@
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://avatars.githubusercontent.com/u/59117535?s=60&v=4" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <img src="https://avatars.githubusercontent.com/u/59117535?s=60&v=4" alt="mdo" width="32"
+                            height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -216,6 +222,46 @@
     </script>
     <script src="../../../assets/vendor/sweetalert2/sweetalert.js"></script>
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <!-- firebaseUI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", event => {
+            const app = firebase.app();
+        });
+
+        function googleLogin() {
+            //debugger;
+            const provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider)
+                .then(result => {
+                    const user = result.user;
+                    location.href = '/backend/pages/dashboard.php'
+                }).catch(console.log)
+        }
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBIMGro1hy-l5PyJLrBMAzCSVIni4Uz--w",
+            authDomain: "fir-authentation-7d0dd.firebaseapp.com",
+            projectId: "fir-authentation-7d0dd",
+            storageBucket: "fir-authentation-7d0dd.appspot.com",
+            messagingSenderId: "177714024119",
+            appId: "1:177714024119:web:6e04176e252a25c6728732",
+            measurementId: "G-LXMDWYC2CT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+    </script>
     <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
     {% block customscripts %}
     {% endblock %}

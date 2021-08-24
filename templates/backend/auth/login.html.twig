@@ -25,9 +25,9 @@
             </button>
             <ul>
                 {% for fields in errors %}
-                    {% for field in fields %}
-                    <li>{{ field.msg | raw }}</li>
-                    {% endfor %}
+                {% for field in fields %}
+                <li>{{ field.msg | raw }}</li>
+                {% endfor %}
                 {% endfor %}
             </ul>
         </div>
@@ -43,7 +43,7 @@
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text">
-                                    <i class="fas fa-user" style="height: 25px;"></i>
+                                        <i class="fas fa-user" style="height: 25px;"></i>
                                         <!-- <i class="icon-user"></i> -->
                                     </span>
                                 </div>
@@ -60,6 +60,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <button class="btn btn-primary px-4" name="btnLogin">Đăng nhập</button>
+
                                 </div>
                                 <div class="col-6 text-right">
                                     <a class="btn btn-link px-0" href="#">Quên mật khẩu?</a>
@@ -83,5 +84,8 @@
         </div>
     </div>
 </form>
+<p class="text-center"><button class="btn btn-success px-4 mt-2" onclick="googleLogin()">Đăng nhập bằng Google</button>
+</p>
+
 {% endblock %}
 {# End Nội dung trong block content #}

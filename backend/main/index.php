@@ -6,7 +6,7 @@ require_once __DIR__.'/../../bootstrap.php';
 // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
 include_once(__DIR__.'/../../dbconnect.php');
 
-if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged'])) {
+if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged']) ) {
     header('location:../auth/login.php');
 }
 
