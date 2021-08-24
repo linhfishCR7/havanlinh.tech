@@ -7,8 +7,13 @@ require_once __DIR__ . '/../../bootstrap.php';
 include_once(__DIR__ . '/../../dbconnect.php');
 
 // Đã đăng nhập rồi -> điều hướng về trang chủ
+<<<<<<< HEAD
 if(isset($_SESSION['email_logged']) && !empty($_SESSION['email_logged']) ) {
     header('location:../pages/dashboard.php');
+=======
+if(isset($_SESSION['email_logged']) && !empty($_SESSION['email_logged'])) {
+    // echo 'Bạn đã đăng nhập rồi. <a href="/havanlinh.tech/backend/">Bấm vào đây để quay về trang chủ.</a>';
+>>>>>>> 20867eaa43e4cff75385aa59e336516d6c7a1231
 }
 else {
     if(isset($_POST['btnLogin'])) {

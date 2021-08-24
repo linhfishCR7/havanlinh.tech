@@ -5,9 +5,13 @@ require_once __DIR__.'/../../bootstrap.php';
 // Truy vấn database
 // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
 include_once(__DIR__.'/../../dbconnect.php');
+<<<<<<< HEAD
 if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged'])) {
     header('location:../auth/login.php');
 }
+=======
+
+>>>>>>> 20867eaa43e4cff75385aa59e336516d6c7a1231
 // 2. Chuẩn bị câu truy vấn $sqlSelect, lấy dữ liệu ban đầu của record cần update
 // Lấy giá trị khóa chính được truyền theo dạng QueryString Parameter key1=value1&key2=value2...
 $ID = $_GET['ID'];

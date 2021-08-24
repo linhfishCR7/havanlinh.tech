@@ -5,9 +5,13 @@ require_once __DIR__.'/../../bootstrap.php';
 // Truy vấn database
 // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
 include_once(__DIR__.'/../../dbconnect.php');
+<<<<<<< HEAD
 if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged'])) {
     header('location:../auth/login.php');
 }
+=======
+
+>>>>>>> 20867eaa43e4cff75385aa59e336516d6c7a1231
 // 2. Nếu người dùng có bấm nút Đăng ký thì thực thi câu lệnh UPDATE
 if(isset($_POST['btnSave'])) 
 {

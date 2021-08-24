@@ -2,9 +2,13 @@
 // Truy vấn database
 // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
 include_once(__DIR__.'/../../dbconnect.php');
+<<<<<<< HEAD
 if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged'])) {
     header('location:../auth/login.php');
 }
+=======
+
+>>>>>>> 20867eaa43e4cff75385aa59e336516d6c7a1231
 $ID = $_POST['ID'];
 $sqlSelect = "SELECT * FROM `main` WHERE ID=$ID;";
 

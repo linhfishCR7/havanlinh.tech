@@ -4,10 +4,13 @@ require_once __DIR__.'/../../bootstrap.php';
 
 include_once(__DIR__ . '/../../dbconnect.php');
 
+<<<<<<< HEAD
 if(!isset($_SESSION['email_logged']) && empty($_SESSION['email_logged'])) {
     header('location:../auth/login.php');
 }
 
+=======
+>>>>>>> 20867eaa43e4cff75385aa59e336516d6c7a1231
 $time_now = time();    // lưu thời gian hiện tại
 $time_out = 60; // khoảng thời gian chờ để tính một kết nối mới (tính bằng giây)
 $ip_address = $_SERVER['REMOTE_ADDR'];    // lưu lại IP của kết nối
